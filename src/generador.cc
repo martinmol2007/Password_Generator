@@ -115,3 +115,11 @@ void Password::mostrar_password() const {
 
     return;
 }
+
+void Password::shuffle_vector() {
+    random_device rd;
+    mt19937 gen(rd());
+    shuffle(password_.begin(), password_.end(), gen);
+
+    return;
+}

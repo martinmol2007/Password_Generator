@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <algorithm>
 
 class Password {
     private:
@@ -128,6 +129,12 @@ class Password {
      * 
      */
     void mostrar_password() const;
+
+    /**
+     * @brief Mezcla aleatoriamente un vector
+     * 
+     */
+    void shuffle_vector();
 
 };
 
