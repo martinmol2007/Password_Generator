@@ -46,13 +46,11 @@ Cuántos caracteres especiales quieres en tu contraseña: 1
 Tu contraseña es: aB3f#c92
 ```
 
+> [!WARNING]
+> **Entrada no numérica rompe el flujo del programa.** Si en cualquiera de las 4 preguntas introduces algo que no sea un número (por ejemplo una letra), `cin` se queda en estado de fallo permanente. A partir de ahí, todas las preguntas siguientes se saltan en silencio sin pedir nada, y el programa termina generando una contraseña incompleta o vacía o errónea, sin avisar del motivo. 
+
 ## Estructura del proyecto
 
 La clase `Password` acumula los caracteres pedidos en un `std::vector<char>` y expone un método por cada tipo de carácter (`generar_letras_minusculas`, `generar_letras_mayusculas`, `generar_numeros`, `generar_caracteres_especiales`), además de `shuffle_vector()` para mezclarlos antes de mostrar el resultado.
 
-## Pendiente
-
-
-
-- La entrada por teclado no maneja bien valores no numéricos (`cin` puede quedar en estado de fallo).
 
