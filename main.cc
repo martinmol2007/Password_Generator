@@ -50,16 +50,28 @@ int main() {
         }  
     }    
 
-    cout << "Cuantas letras mayusculas quieres en tu contraseña: ";
-    while(not password.is_letras_mayusculas() && cin >> num)  {
+    // Numeros
+    cout << "Cuantos numeros quieres en tu contraseña: ";
+    while(not password.is_numeros() && cin >> num)  {
         if(num >= 0) {
-            password.generar_letras_mayusculas(num);
+            password.generar_numeros(num);
+        } else {
+            cout << "Error, introduce un numero valido: ";
+        }  
+    } 
+
+    // Caracteres especiales
+    cout << "Cuantos caracteres especiales quieres en tu contraseña: ";
+    while(not password.is_caracteres_especiales() && cin >> num)  {
+        if(num >= 0) {
+            password.generar_caracteres_especiales(num);
         } else {
             cout << "Error, introduce un numero valido: ";
         }  
     } 
 
     cout << endl;
+    cout << "Tu contraseña es: ";
     password.mostrar_password();
 
     return 0;
