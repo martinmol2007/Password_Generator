@@ -70,6 +70,10 @@ int main() {
         }  
     } 
 
+    // Mezcla todo para que sea completamente aleatorio
+    password.shuffle_vector();
+
+    // Muestralo por pantalla
     cout << endl;
     cout << "Tu contraseña es: ";
     password.mostrar_password();
