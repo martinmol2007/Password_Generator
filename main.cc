@@ -26,7 +26,7 @@ int main() {
     // Da la bienvenida al usuario y te dice lo que hace el programa
     informacion_inicio();
 
-
+    
 
 
     return 0;

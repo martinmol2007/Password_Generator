@@ -106,3 +106,12 @@ int Password::generar_numero_random(int inicio, int fin) const {
     uniform_int_distribution<> dis(inicio, fin);
     return dis(gen);
 }
+
+void Password::mostrar_password() const {
+    for(int i = 0; i < password_.size(); i++) {
+        cout << password_[i];
+    }
+    cout << endl;
+
+    return;
+}

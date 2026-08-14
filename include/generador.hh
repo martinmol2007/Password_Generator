@@ -1,8 +1,8 @@
 #ifndef GENERADOR_HH
 #define GENERADOR_HH
 
+#include <iostream>
 #include <vector>
-#include <string>
 #include <random>
 
 class Password {
@@ -122,6 +122,12 @@ class Password {
      * @return int Numero aleatorio generado
      */
     int generar_numero_random(int inicio, int fin) const;
+
+    /**
+     * @brief Muestra por pantalla la contraseña
+     * 
+     */
+    void mostrar_password() const;
 
 };
 
