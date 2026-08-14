@@ -13,7 +13,7 @@ class Password {
         bool numeros_;
         bool caracteres_especiales_;
         // Vector donde se va almacenando la contraseña
-        std::vector<std::string> password_;
+        std::vector<char> password_;
     public:
 
     Password();
@@ -23,7 +23,7 @@ class Password {
     void completar_numeros();
     void completar_caracteres_especiales();
 
-    void poner_caracter_vector(std::string s);
+    void poner_caracter_vector(char c);
 
     bool is_letras_minusuculas() const;
     bool is_letras_mayusculas() const;
@@ -36,7 +36,7 @@ class Password {
     void generar_caracteres_especiales(int num);
 
     int generar_numero_random(int inicio, int fin) const;
-    
+
 };
 
 

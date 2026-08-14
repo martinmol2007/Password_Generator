@@ -7,7 +7,7 @@ Password::Password() {
     letras_mayusculas_ = false;
     numeros_ = false;
     caracteres_especiales_ = false;
-    password_ = vector<string> ();
+    password_ = vector<char> ();
 }
 
 void Password::completar_letras_minusuclas() {
@@ -34,8 +34,8 @@ void Password::completar_caracteres_especiales() {
     return;
 }
 
-void Password::poner_caracter_vector(string s) {
-    password_.push_back(s);
+void Password::poner_caracter_vector(char c) {
+    password_.push_back(c);
 
     return;
 }
@@ -58,26 +58,37 @@ bool Password::is_caracteres_especiales() const {
 
 void Password::generar_letras_minusculas(int veces) {
     for(int i = 0; i < veces; i++) {
-        
+        int num = generar_numero_random(97, 122);
+        char c = static_cast<char>(num);
+        poner_caracter_vector(c);
     }
+    completar_letras_minusuclas();
 }
 
 void Password::generar_letras_mayusculas(int veces) {
     for(int i = 0; i < veces; i++) {
-        
+        int num = generar_numero_random(65, 90);
+        char c = static_cast<char>(num);
+        poner_caracter_vector(c);
     }
+    completar_letras_mayusculas();
 }
 
 void Password::generar_numeros(int veces) {
     for(int i = 0; i < veces; i++) {
-        
+        int num = generar_numero_random(0, 9);
+        poner_caracter_vector(num + '0');
     }
+    completar_numeros();
 }
 
 void Password::generar_caracteres_especiales(int veces) {
     for(int i = 0; i < veces; i++) {
-        
+        int num = generar_numero_random(35, 38);
+        char c = static_cast<char>(num);
+        poner_caracter_vector(c);
     }
+    completar_caracteres_especiales();
 }
 
 
