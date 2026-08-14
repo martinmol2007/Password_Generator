@@ -28,8 +28,9 @@ int main() {
     informacion_inicio();
 
     Password password;
-
     int num;
+
+    // Letras Minusculas
     cout << "Cuantas letras minusculas quieres en tu contraseña: ";
     while(not password.is_letras_minusuculas() && cin >> num)  {
         if(num >= 0) {
@@ -38,6 +39,25 @@ int main() {
             cout << "Error, introduce un numero valido: ";
         }  
     }
+
+    // Letras Mayusculas
+    cout << "Cuantas letras mayusculas quieres en tu contraseña: ";
+    while(not password.is_letras_mayusculas() && cin >> num)  {
+        if(num >= 0) {
+            password.generar_letras_mayusculas(num);
+        } else {
+            cout << "Error, introduce un numero valido: ";
+        }  
+    }    
+
+    cout << "Cuantas letras mayusculas quieres en tu contraseña: ";
+    while(not password.is_letras_mayusculas() && cin >> num)  {
+        if(num >= 0) {
+            password.generar_letras_mayusculas(num);
+        } else {
+            cout << "Error, introduce un numero valido: ";
+        }  
+    } 
 
     cout << endl;
     password.mostrar_password();
