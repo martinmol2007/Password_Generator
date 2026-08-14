@@ -63,6 +63,8 @@ void Password::generar_letras_minusculas(int veces) {
         poner_caracter_vector(c);
     }
     completar_letras_minusuclas();
+
+    return;
 }
 
 void Password::generar_letras_mayusculas(int veces) {
@@ -72,6 +74,8 @@ void Password::generar_letras_mayusculas(int veces) {
         poner_caracter_vector(c);
     }
     completar_letras_mayusculas();
+
+    return;
 }
 
 void Password::generar_numeros(int veces) {
@@ -80,6 +84,8 @@ void Password::generar_numeros(int veces) {
         poner_caracter_vector(num + '0');
     }
     completar_numeros();
+
+    return;
 }
 
 void Password::generar_caracteres_especiales(int veces) {
@@ -89,6 +95,8 @@ void Password::generar_caracteres_especiales(int veces) {
         poner_caracter_vector(c);
     }
     completar_caracteres_especiales();
+
+    return;
 }
 
 
