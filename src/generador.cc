@@ -10,7 +10,7 @@ Password::Password() {
     password_ = vector<char> ();
 }
 
-void Password::completar_letras_minusuclas() {
+void Password::completar_letras_minusculas() {
     letras_minusculas_ = true;
 
     return;
@@ -40,7 +40,7 @@ void Password::poner_caracter_vector(char c) {
     return;
 }
 
-bool Password::is_letras_minusuculas() const {
+bool Password::is_letras_minusculas() const {
     return letras_minusculas_;
 }
 
@@ -62,7 +62,7 @@ void Password::generar_letras_minusculas(int veces) {
         char c = static_cast<char>(num);
         poner_caracter_vector(c);
     }
-    completar_letras_minusuclas();
+    completar_letras_minusculas();
 
     return;
 }
@@ -108,7 +108,7 @@ int Password::generar_numero_random(int inicio, int fin) const {
 }
 
 void Password::mostrar_password() const {
-    for(int i = 0; i < password_.size(); i++) {
+    for(int i = 0; i < int(password_.size()); i++) {
         cout << password_[i];
     }
     cout << endl;
@@ -122,4 +122,8 @@ void Password::shuffle_vector() {
     shuffle(password_.begin(), password_.end(), gen);
 
     return;
+}
+
+int Password::password_size() const {
+    return password_.size();
 }

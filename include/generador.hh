@@ -8,7 +8,7 @@
 
 class Password {
     private:
-        // Para indicar si se puede pasar al proximo paso
+        // Para indicar si se puede pasar al próximo paso
         bool letras_minusculas_;
         bool letras_mayusculas_;
         bool numeros_;
@@ -28,7 +28,7 @@ class Password {
      * @brief Marca como hecho el paso de las letras minusculas
      * 
      */
-    void completar_letras_minusuclas();
+    void completar_letras_minusculas();
 
     /**
      * @brief Marca como hecho el paso de las letras mayusculas
@@ -37,7 +37,7 @@ class Password {
     void completar_letras_mayusculas();
 
     /**
-     * @brief Marca como hecho el paso de los numeros
+     * @brief Marca como hecho el paso de los números
      * 
      */
     void completar_numeros();
@@ -49,22 +49,22 @@ class Password {
     void completar_caracteres_especiales();
 
     /**
-     * @brief Funcion que añade al vector el caracter c
-     * 
-     * @param c Caracter, letra o numero a añadir al vector
+     * @brief Función que añade al vector el carácter c
+     *
+     * @param c Carácter, letra o número a añadir al vector
      */
     void poner_caracter_vector(char c);
 
     /**
-     * @brief Mira si el paso de añadir las letras minusculas esta completado
+     * @brief Mira si el paso de añadir las letras minúsculas está completado
      * 
      * @return true Esta completado
      * @return false Falta por hacer
      */
-    bool is_letras_minusuculas() const;
+    bool is_letras_minusculas() const;
 
     /**
-     * @brief Mira si el paso de añadir las letras mayusculas esta completado
+     * @brief Mira si el paso de añadir las letras mayúsculas está completado
      * 
      * @return true Esta completado
      * @return false Falta por hacer
@@ -72,7 +72,7 @@ class Password {
     bool is_letras_mayusculas() const;
 
     /**
-     * @brief Mira si el paso de añadir los numeros esta completado
+     * @brief Mira si el paso de añadir los números está completado
      * 
      * @return true Esta completado
      * @return false Falta por hacer
@@ -80,7 +80,7 @@ class Password {
     bool is_numeros() const;
 
     /**
-     * @brief Mira si el paso de añadir los caracteres especiales esta completado
+     * @brief Mira si el paso de añadir los caracteres especiales está completado
      * 
      * @return true Esta completado
      * @return false Falta por hacer
@@ -88,23 +88,23 @@ class Password {
     bool is_caracteres_especiales() const;
 
     /**
-     * @brief Genera letras minusculas aleatorias y las añade al vector
+     * @brief Genera letras minúsculas aleatorias y las añade al vector
      * 
      * @param num Cantidad de letras minusculas a generar
      */
     void generar_letras_minusculas(int num);
 
     /**
-     * @brief Genera letras mayusculas aleatorias y las añade al vector
+     * @brief Genera letras mayúsculas aleatorias y las añade al vector
      * 
      * @param num Cantidad de letras mayusculas a generar
      */
     void generar_letras_mayusculas(int num);
 
     /**
-     * @brief Genera numeros aleatorias y las añade al vector
+     * @brief Genera números aleatorias y las añade al vector
      * 
-     * @param num Cantidad de numeros a generar
+     * @param num Cantidad de números a generar
      */
     void generar_numeros(int num);
 
@@ -116,11 +116,11 @@ class Password {
     void generar_caracteres_especiales(int num);
 
     /**
-     * @brief Genera un numero aleatorio
+     * @brief Genera un número aleatorio
      * 
      * @param inicio Inicio del intervalo
      * @param fin Final del intervalo
-     * @return int Numero aleatorio generado
+     * @return int Número aleatorio generado
      */
     int generar_numero_random(int inicio, int fin) const;
 
@@ -135,6 +135,13 @@ class Password {
      * 
      */
     void shuffle_vector();
+
+    /**
+     * @brief Devuelve el tamaño del vector
+     * 
+     * @return int Tamaño
+     */
+    int password_size() const;
 
 };
 

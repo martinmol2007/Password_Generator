@@ -11,12 +11,12 @@ const string SEPARADOR(63, '=');
 void informacion_inicio() {
     cout << SEPARADOR << endl;
     cout << "Bienvenido a mi generador de contraseñas!" << endl;
-    cout << "En este pequeño programa, podras generar contraseñas dado unos parametros." << endl;
-    cout << "El programa te pedira:" << endl;
-    cout << "- Cantidad de letras minusculas que quieres" << endl;
-    cout << "- Cantidad de letras mayusculas que quieres" << endl;
-    cout << "- Cantidad de numeros que quieres" << endl;
-    cout << "- Simbolos especiales (@, #,...) que quieres" << endl;
+    cout << "En este pequeño programa, podrás generar contraseñas dado unos parámetros." << endl;
+    cout << "El programa te pedirá:" << endl;
+    cout << "- Cantidad de letras minúsculas que quieres" << endl;
+    cout << "- Cantidad de letras mayúsculas que quieres" << endl;
+    cout << "- Cantidad de números que quieres" << endl;
+    cout << "- Símbolos especiales (@, #,...) que quieres" << endl;
     cout << SEPARADOR << endl;
     cout << endl;
 
@@ -31,52 +31,57 @@ int main() {
     int num;
 
     // Letras Minusculas
-    cout << "Cuantas letras minusculas quieres en tu contraseña: ";
-    while(not password.is_letras_minusuculas() && cin >> num)  {
+    cout << "Cuántas letras minúsculas quieres en tu contraseña: ";
+    while(not password.is_letras_minusculas() && cin >> num)  {
         if(num >= 0) {
             password.generar_letras_minusculas(num);
         } else {
-            cout << "Error, introduce un numero valido: ";
+            cout << "Error, introduce un número válido: ";
         }  
     }
 
     // Letras Mayusculas
-    cout << "Cuantas letras mayusculas quieres en tu contraseña: ";
+    cout << "Cuántas letras mayúsculas quieres en tu contraseña: ";
     while(not password.is_letras_mayusculas() && cin >> num)  {
         if(num >= 0) {
             password.generar_letras_mayusculas(num);
         } else {
-            cout << "Error, introduce un numero valido: ";
+            cout << "Error, introduce un número válido: ";
         }  
     }    
 
-    // Numeros
-    cout << "Cuantos numeros quieres en tu contraseña: ";
+    // Números
+    cout << "Cuántos números quieres en tu contraseña: ";
     while(not password.is_numeros() && cin >> num)  {
         if(num >= 0) {
             password.generar_numeros(num);
         } else {
-            cout << "Error, introduce un numero valido: ";
+            cout << "Error, introduce un número válido: ";
         }  
     } 
 
     // Caracteres especiales
-    cout << "Cuantos caracteres especiales quieres en tu contraseña: ";
+    cout << "Cuántos caracteres especiales quieres en tu contraseña: ";
     while(not password.is_caracteres_especiales() && cin >> num)  {
         if(num >= 0) {
             password.generar_caracteres_especiales(num);
         } else {
-            cout << "Error, introduce un numero valido: ";
+            cout << "Error, introduce un número válido: ";
         }  
     } 
 
-    // Mezcla todo para que sea completamente aleatorio
-    password.shuffle_vector();
+    if(password.password_size() > 0) {
+        // Mezcla todo para que sea completamente aleatorio
+        password.shuffle_vector();
 
-    // Muestralo por pantalla
-    cout << endl;
-    cout << "Tu contraseña es: ";
-    password.mostrar_password();
+        // Muéstralo por pantalla
+        cout << endl;
+        cout << "Tu contraseña es: ";
+        password.mostrar_password();
+    } else {
+        cout << "Error, prueba de nuevo" << endl;
+    }
+    
 
     return 0;
 }
