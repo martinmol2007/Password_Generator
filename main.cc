@@ -8,6 +8,7 @@ using namespace std;
 
 const string SEPARADOR(63, '=');
 
+// Imprime el mensaje de bienvenida y las instrucciones iniciales
 void informacion_inicio() {
     cout << SEPARADOR << endl;
     cout << "Bienvenido a mi generador de contraseñas!" << endl;
@@ -70,6 +71,7 @@ int main() {
         }  
     } 
 
+    // Solo mezcla y muestra si se ha generado al menos un carácter
     if(password.password_size() > 0) {
         // Mezcla todo para que sea completamente aleatorio
         password.shuffle_vector();

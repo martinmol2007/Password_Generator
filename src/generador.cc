@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Contraseña vacía y ningún paso completado todavía
 Password::Password() {
     letras_minusculas_ = false;
     letras_mayusculas_ = false;
@@ -10,6 +11,7 @@ Password::Password() {
     password_ = vector<char> ();
 }
 
+// Marcan cada paso como completado
 void Password::completar_letras_minusculas() {
     letras_minusculas_ = true;
 
@@ -34,12 +36,14 @@ void Password::completar_caracteres_especiales() {
     return;
 }
 
+// Añade un carácter al vector de la contraseña
 void Password::poner_caracter_vector(char c) {
     password_.push_back(c);
 
     return;
 }
 
+// Consultan si cada paso ya está completado
 bool Password::is_letras_minusculas() const {
     return letras_minusculas_;
 }
@@ -56,6 +60,7 @@ bool Password::is_caracteres_especiales() const {
     return caracteres_especiales_;
 }
 
+// Genera "veces" letras minúsculas aleatorias (ASCII 97-122) y las añade
 void Password::generar_letras_minusculas(int veces) {
     for(int i = 0; i < veces; i++) {
         int num = generar_numero_random(97, 122);
@@ -67,6 +72,7 @@ void Password::generar_letras_minusculas(int veces) {
     return;
 }
 
+// Genera "veces" letras mayúsculas aleatorias (ASCII 65-90) y las añade
 void Password::generar_letras_mayusculas(int veces) {
     for(int i = 0; i < veces; i++) {
         int num = generar_numero_random(65, 90);
@@ -78,6 +84,7 @@ void Password::generar_letras_mayusculas(int veces) {
     return;
 }
 
+// Genera "veces" dígitos aleatorios (0-9) y los añade
 void Password::generar_numeros(int veces) {
     for(int i = 0; i < veces; i++) {
         int num = generar_numero_random(0, 9);
@@ -88,6 +95,7 @@ void Password::generar_numeros(int veces) {
     return;
 }
 
+// Genera "veces" símbolos aleatorios (ASCII 35-38: # $ % &) y los añade
 void Password::generar_caracteres_especiales(int veces) {
     for(int i = 0; i < veces; i++) {
         int num = generar_numero_random(35, 38);
@@ -100,6 +108,7 @@ void Password::generar_caracteres_especiales(int veces) {
 }
 
 
+// Número aleatorio entre inicio y fin, ambos incluidos
 int Password::generar_numero_random(int inicio, int fin) const {
     random_device rd;
     mt19937 gen(rd());
@@ -107,6 +116,7 @@ int Password::generar_numero_random(int inicio, int fin) const {
     return dis(gen);
 }
 
+// Imprime la contraseña generada por pantalla
 void Password::mostrar_password() const {
     for(int i = 0; i < int(password_.size()); i++) {
         cout << password_[i];
@@ -116,6 +126,7 @@ void Password::mostrar_password() const {
     return;
 }
 
+// Reordena aleatoriamente los caracteres ya generados
 void Password::shuffle_vector() {
     random_device rd;
     mt19937 gen(rd());
@@ -124,6 +135,7 @@ void Password::shuffle_vector() {
     return;
 }
 
+// Cuántos caracteres lleva la contraseña hasta ahora
 int Password::password_size() const {
     return password_.size();
 }
