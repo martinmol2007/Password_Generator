@@ -56,23 +56,34 @@ bool Password::is_caracteres_especiales() const {
     return caracteres_especiales_;
 }
 
-void Password::generar_letras_minusculas(int num) {
-
+void Password::generar_letras_minusculas(int veces) {
+    for(int i = 0; i < veces; i++) {
+        
+    }
 }
 
-void Password::generar_letras_mayusculas(int num) {
-
+void Password::generar_letras_mayusculas(int veces) {
+    for(int i = 0; i < veces; i++) {
+        
+    }
 }
 
-void Password::generar_numeros(int num) {
-
+void Password::generar_numeros(int veces) {
+    for(int i = 0; i < veces; i++) {
+        
+    }
 }
 
-void Password::generar_caracteres_especiales(int num) {
-
+void Password::generar_caracteres_especiales(int veces) {
+    for(int i = 0; i < veces; i++) {
+        
+    }
 }
 
 
 int Password::generar_numero_random(int inicio, int fin) const {
-    
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(inicio, fin);
+    return dis(gen);
 }

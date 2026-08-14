@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <random>
 
 class Password {
     private:
@@ -35,7 +36,8 @@ class Password {
     void generar_caracteres_especiales(int num);
 
     int generar_numero_random(int inicio, int fin) const;
-}
+    
+};
 
 
 
