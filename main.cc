@@ -18,6 +18,7 @@ void informacion_inicio() {
     cout << "- Cantidad de numeros que quieres" << endl;
     cout << "- Simbolos especiales (@, #,...) que quieres" << endl;
     cout << SEPARADOR << endl;
+    cout << endl;
 
     return;
 }
@@ -26,8 +27,20 @@ int main() {
     // Da la bienvenida al usuario y te dice lo que hace el programa
     informacion_inicio();
 
-    
+    Password password;
 
+    int num;
+    cout << "Cuantas letras minusculas quieres en tu contraseña: ";
+    while(cin >> num && not password.is_letras_minusuculas()) {
+        if(num >= 0) {
+            password.generar_letras_minusculas(num);
+        } else {
+            cout << "Error, introduce un numero valido: ";
+        }  
+    }
+
+    cout << endl;
+    password.mostrar_password();
 
     return 0;
 }
