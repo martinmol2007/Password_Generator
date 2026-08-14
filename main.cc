@@ -31,7 +31,7 @@ int main() {
 
     int num;
     cout << "Cuantas letras minusculas quieres en tu contraseña: ";
-    while(cin >> num && not password.is_letras_minusuculas()) {
+    while(not password.is_letras_minusuculas() && cin >> num)  {
         if(num >= 0) {
             password.generar_letras_minusculas(num);
         } else {
